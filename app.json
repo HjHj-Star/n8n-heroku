@@ -1,43 +1,65 @@
 {
-    "name": "n8n",
-    "description": "deploy n8n to heroku without any hassle",
-    "keywords": [
-      "n8n",
-      "node",
-      "automation"
-    ],
-    "website": "https://n8n.io",
-    "repository": "https://github.com/n8n-io/n8n-heroku",
-    "logo": "https://raw.githubusercontent.com/n8n-io/n8n-heroku/main/n8n_logo.png",
-    "success_url": "/",
-    "stack": "container",
-    "env": {
-      "GENERIC_TIMEZONE": {
-        "description": "Time Zone to use with Heroku. You can find the name of your timezone for example here: https://momentjs.com/timezone/.",
-        "value": "Europe/Istanbul"
-      },
-      "N8N_ENCRYPTION_KEY": {
-        "description": "Set the n8n encryption key to a static value to avoid Heroku overriding it (causing authentication to fail).",
-        "value": "YvmcdXqsEwPzUvNsKQ56Rqp7sGGq7J7Y"
-      },
-      "WEBHOOK_URL": {
-        "description": "Replace <appname> with your Heroku application name. This will ensure the correct webhook URLs are being shown in n8n.",
-        "value": "https://n8n-hjhj.herokuapp.com"
-      },
-      "DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED": {
-        "description": "SSL is required to connect to Postgres on Heroku",
-        "value": "false"
-      }
+  "name": "n8n",
+  "description": "Deploy n8n to Heroku with Supabase",
+  "keywords": [
+    "n8n",
+    "node",
+    "automation"
+  ],
+  "website": "https://n8n.io",
+  "repository": "https://github.com/n8n-io/n8n-heroku",
+  "logo": "https://raw.githubusercontent.com/n8n-io/n8n-heroku/main/n8n_logo.png",
+  "success_url": "/",
+  "stack": "container",
+  "env": {
+    "GENERIC_TIMEZONE": {
+      "description": "Time Zone to use with Heroku.",
+      "value": "Europe/Istanbul"
     },
-    "addons": [
-      {
-        "plan": "heroku-postgresql",
-        "options": {
-          "version": "16"
-        }
-      },
-      {
-        "plan": "papertrail:choklad"
-      }
-    ]
-  }
+    "N8N_ENCRYPTION_KEY": {
+      "description": "Static encryption key for n8n.",
+      "value": "YvmcdXqsEwPzUvNsKQ56Rqp7sGGq7J7Y"
+    },
+    "WEBHOOK_URL": {
+      "description": "Replace <appname> with your Heroku app name.",
+      "value": "https://hjhj-n8n.herokuapp.com/"
+    },
+    "DB_TYPE": {
+      "description": "Database type",
+      "value": "postgresdb"
+    },
+    "DB_POSTGRESDB_CONNECTION_STRING": {
+      "description": "Postgres connection string for Supabase",
+      "value": "postgres://postgres:Almudhish1@db.kiskvvkwokzxvocslxvwl.supabase.co:5432/postgres?sslmode=require"
+    },
+    "N8N_BASIC_AUTH_ACTIVE": {
+      "description": "Enable basic auth",
+      "value": "true"
+    },
+    "N8N_BASIC_AUTH_USER": {
+      "description": "Username for n8n",
+      "value": "n8n"
+    },
+    "N8N_BASIC_AUTH_PASSWORD": {
+      "description": "Password for n8n",
+      "value": "Almudhish1"
+    },
+    "N8N_HOST": {
+      "description": "Host binding",
+      "value": "0.0.0.0"
+    },
+    "N8N_PORT": {
+      "description": "Port",
+      "value": "5678"
+    },
+    "DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED": {
+      "description": "SSL is required to connect to Postgres on Heroku",
+      "value": "false"
+    }
+  },
+  "addons": [
+    {
+      "plan": "papertrail:choklad"
+    }
+  ]
+}
