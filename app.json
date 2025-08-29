@@ -30,7 +30,7 @@
     },
     "DB_POSTGRESDB_CONNECTION_STRING": {
       "description": "Postgres connection string for Supabase",
-      "value": "postgres://postgres:Almudhish1@db.kiskvvkwokzxvocslxvwl.supabase.co:5432/postgres?sslmode=require"
+      "value": "postgresql://postgres:Almudhish1@db.kisvkxrwxkzvoscxlvwl.supabase.co:5432/postgres?sslmode=require"
     },
     "N8N_BASIC_AUTH_ACTIVE": {
       "description": "Enable basic auth",
